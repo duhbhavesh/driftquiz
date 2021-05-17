@@ -1,9 +1,17 @@
-function App() {
-  return (
-    <div>
-      <h1 className="text-center text-2xl font-bold">Driftquiz</h1>
-    </div>
-  );
-}
+import { Header } from './components/Header';
+import { Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Quiz } from './pages/Quiz';
 
-export default App;
+export const App = () => {
+   return (
+      <>
+         <Header />
+         <Routes>
+            <Route path='/' element={<Quiz />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/play' element={<Quiz />} />
+         </Routes>
+      </>
+   );
+};
