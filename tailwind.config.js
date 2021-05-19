@@ -6,10 +6,10 @@ module.exports = {
          colors: {
             transparent: 'transparent',
             current: 'currentColor',
-            purple: {
-               light: '#B376E5',
-               DEFAULT: '#A054DE',
-               dark: '#8D31D8',
+            blue: {
+               light: '#4A72E8',
+               DEFAULT: '#3864E5',
+               dark: '#2553E3',
             },
             black: {
                darkest: '#0B0E11',
