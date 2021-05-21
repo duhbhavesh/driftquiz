@@ -1,11 +1,29 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
+import { useParams } from 'react-router';
+import { Question } from '../components/Question';
+import { QuizHeader } from '../components/QuizHeader';
+import { useQuiz } from '../context/QuizContext';
 
 export const Quiz: FC = () => {
+   const { state, dispatch } = useQuiz();
+   const { quizID } = useParams();
+
+   useEffect(() => {
+      const findCurrentQuiz = state.quiz.find((quiz) => {
+         return quiz.id === quizID;
+      });
+      dispatch({ type: 'SET_CURRENT_QUIZ', payload: findCurrentQuiz });
+   }, []);
+
    return (
       <>
-         <div className='bg-white overflow-hidden sm:rounded-lg max-w-2xl mx-auto mt-10 m-2 h-10'>
-            <h2 className='text-dark text-center'>Quiz Page</h2>
-         </div>
+         <QuizHeader />
+         {state.currentQuiz &&
+         state.currentQuiz.questions[state.currentQuestionNumber] ? (
+            <Question currentQuiz={state.currentQuiz} />
+         ) : (
+            <p>Quiz Ended</p>
+         )}
       </>
    );
 };

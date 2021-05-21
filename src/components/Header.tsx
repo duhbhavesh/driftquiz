@@ -4,7 +4,7 @@ export const Header: FC = () => {
    return (
       <>
          <div className='mt-5'>
-            <h1 className='text-center text-2xl font-extrabold text-blue-dark'>
+            <h1 className='text-center text-2xl font-extrabold text-blue cursor-pointer'>
                Driftquiz
             </h1>
          </div>

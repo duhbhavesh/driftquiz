@@ -1,6 +1,6 @@
 export type OptionType = {
    id: string;
-   text: string;
+   option: string;
    isRight: boolean;
 };
 
@@ -12,6 +12,10 @@ export type QuestionType = {
 };
 
 export type QuizType = {
-   quizName: string;
+   id: string;
+   quizImage: string;
+   topic: string;
    questions: QuestionType[];
 };
+
+export type QuizDataType = QuizType[];
