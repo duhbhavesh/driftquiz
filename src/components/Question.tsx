@@ -73,6 +73,20 @@ export const Question = ({ currentQuiz }: QuizProp) => {
       }
    };
 
+   const handleCorrectInCorrectStyling = (
+      isRight: boolean,
+      selectedButtonID: string,
+   ): string => {
+      if (isRight && selectedButtonID === optionID) {
+         return 'bg-green-500';
+      }
+
+      if (!isRight && selectedButtonID === optionID) {
+         return 'bg-red-500';
+      }
+      return '';
+   };
+
    return (
       <>
          <div className='flex flex-col items-center justify-center bg-black-darkest py-3 px-4 sm:px-6 lg:px-8'>
@@ -99,10 +113,14 @@ export const Question = ({ currentQuiz }: QuizProp) => {
                            type='button'
                            disabled={disabledButtons}
                            className={`group relative w-full flex justify-center py-2 px-4 border border-transparent mt-7 text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                              option.isRight && option.id === optionID
-                                 ? 'bg-green-500'
-                                 : !option.isRight && option.id === optionID
-                                 ? 'bg-red-500'
+                              handleCorrectInCorrectStyling(
+                                 option.isRight,
+                                 option.id,
+                              )
+                                 ? handleCorrectInCorrectStyling(
+                                      option.isRight,
+                                      option.id,
+                                   )
                                  : 'bg-black-lightest'
                            }`}>
                            {option.option}
