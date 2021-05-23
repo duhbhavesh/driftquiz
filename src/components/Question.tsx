@@ -92,7 +92,6 @@ export const Question = ({ currentQuiz }: QuizProp) => {
          <div className='flex flex-col items-center justify-center bg-black-darkest py-3 px-4 sm:px-6 lg:px-8'>
             <div className='h-full max-w-md w-full space-y-8 rounded-md bg-black-light p-6 pb-16'>
                <div>
-                  {console.log(state.currentQuestionNumber)}
                   <h2 className='mt-6 mb-12 text-center text-xl font-bold text-white'>
                      {
                         currentQuiz.questions[state.currentQuestionNumber]

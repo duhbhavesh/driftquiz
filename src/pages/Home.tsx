@@ -14,7 +14,7 @@ export const Home = () => {
             <div className='flex flex-wrap -mx-1 lg:-mx-4'>
                {state.quiz.map((quiz) => {
                   return (
-                     <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-2/5 lg:mx-auto'>
+                     <div className='my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3 lg:mx-auto'>
                         <div className='m-5 max-w-sm mx-auto overflow-hidden bg-black-light rounded-md dark:bg-gray-800'>
                            <img
                               className='object-cover object-center w-full h-56'

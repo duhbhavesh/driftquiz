@@ -11,7 +11,6 @@ export const AnswersModal = ({ openModal, closeModal, isOpen }: any) => {
       const currentQuiz = quizResult.result.find(
          (result) => result.id === quizID,
       );
-
       if (currentQuiz?.selectedOption === optionID) {
          return true;
       }
@@ -107,25 +106,19 @@ export const AnswersModal = ({ openModal, closeModal, isOpen }: any) => {
                                                            )
                                                          : 'bg-black-lightest'
                                                    }`}>
-                                                   {isOptionSelected(
-                                                      option.id,
-                                                      quiz.id,
-                                                   ) ? (
-                                                      isCorrectAnswer(
+                                                   {
+                                                      isOptionSelected(
                                                          option.id,
                                                          quiz.id,
-                                                      ) ? (
-                                                         <div>
-                                                            {option.option}
-                                                         </div>
-                                                      ) : (
-                                                         <div>
-                                                            {option.option}
-                                                         </div>
                                                       )
-                                                   ) : (
-                                                      option.option
-                                                   )}
+                                                         ? isCorrectAnswer(
+                                                              option.id,
+                                                              quiz.id,
+                                                           )
+                                                            ? option.option /* prints correct option -> When isOptionSelected: true, isCorrectAnswer: true */
+                                                            : option.option /* prints incorrect option -> When isOptionSelected: true, isCorrectAnswer: false */
+                                                         : option.option /* prints remaining options -> When isOptionSelected: false */
+                                                   }
                                                 </div>
                                              );
                                           })}

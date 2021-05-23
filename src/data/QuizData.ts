@@ -293,4 +293,149 @@ export const quizData: QuizDataType = [
          },
       ],
    },
+   {
+      id: nanoid(),
+      quizImage:
+         'https://res.cloudinary.com/duhbhavesh/image/upload/v1621518241/driftquiz/quiz-2.jpg',
+      topic: 'Photography Intermediate',
+      questions: [
+         {
+            id: nanoid(),
+            question:
+               'In order to minimize file size and loss of quality of an image for printing, how should it be saved?',
+            points: 5,
+            options: [
+               {
+                  id: nanoid(),
+                  option: '.gif',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: '.tiff',
+                  isRight: true,
+               },
+               {
+                  id: nanoid(),
+                  option: '.png',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: '.html',
+                  isRight: false,
+               },
+            ],
+         },
+         {
+            id: nanoid(),
+            question: 'Digital photography is creating a picture using',
+            points: 5,
+            options: [
+               {
+                  id: nanoid(),
+                  option: 'Film',
+                  isRight: true,
+               },
+               {
+                  id: nanoid(),
+                  option: 'Drawing skills',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: 'CCD technology',
+                  isRight: true,
+               },
+               {
+                  id: nanoid(),
+                  option: 'Chemical processes',
+                  isRight: false,
+               },
+            ],
+         },
+         {
+            id: nanoid(),
+            question: 'Some things to consider regarding photo composition are',
+            points: 5,
+            options: [
+               {
+                  id: nanoid(),
+                  option: 'File size and speed',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: 'Camera angle and framing',
+                  isRight: true,
+               },
+               {
+                  id: nanoid(),
+                  option: 'Pixels and storage space',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: 'File format and battery life',
+                  isRight: true,
+               },
+            ],
+         },
+         {
+            id: nanoid(),
+            question:
+               'The built in electronic flash on a camera generally has a range of how many feet?',
+            points: 5,
+            options: [
+               {
+                  id: nanoid(),
+                  option: '1-4 ',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: '5-10',
+                  isRight: true,
+               },
+               {
+                  id: nanoid(),
+                  option: '11-20',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: '21-25 ',
+                  isRight: false,
+               },
+            ],
+         },
+         {
+            id: nanoid(),
+            question: 'How many pixels are in a megapixel?',
+            points: 5,
+            options: [
+               {
+                  id: nanoid(),
+                  option: '100',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: '1,000',
+                  isRight: false,
+               },
+               {
+                  id: nanoid(),
+                  option: '1,000,000',
+                  isRight: true,
+               },
+               {
+                  id: nanoid(),
+                  option: '2,000,000',
+                  isRight: false,
+               },
+            ],
+         },
+      ],
+   },
 ];
