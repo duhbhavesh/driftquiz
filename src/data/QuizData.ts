@@ -296,7 +296,7 @@ export const quizData: QuizDataType = [
    {
       id: nanoid(),
       quizImage:
-         'https://res.cloudinary.com/duhbhavesh/image/upload/v1621518241/driftquiz/quiz-2.jpg',
+         'https://res.cloudinary.com/duhbhavesh/image/upload/v1621751159/driftquiz/quiz-3.jpg',
       topic: 'Photography Intermediate',
       questions: [
          {
