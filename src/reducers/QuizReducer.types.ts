@@ -7,6 +7,4 @@ export type ActionType =
    | { type: 'SET_QUIZ_ID'; payload: string }
    | { type: 'SET_RESULT'; payload: ResultType }
    | { type: 'INCREASE_QUESTION_NUMBER'; payload?: number }
-   | { type: 'INCREASE_SCORE'; payload: number }
-   | { type: 'INITIALIZE_QUESTION_NUMBER_AND_SCORE' }
-   | { type: 'RESET' };
+   | { type: 'INCREASE_SCORE'; payload: number };

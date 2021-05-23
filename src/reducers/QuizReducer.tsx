@@ -47,9 +47,6 @@ export const QuizReducer = (
       case 'INCREASE_SCORE':
          return { ...state, score: state.score + action.payload };
 
-      case 'RESET':
-         return state;
-
       default:
          return state;
    }

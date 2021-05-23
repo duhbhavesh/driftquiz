@@ -1,10 +1,10 @@
-import { FC, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Question } from '../components/Question';
 import { QuizHeader } from '../components/QuizHeader';
 import { useQuiz } from '../context/QuizContext';
 
-export const Quiz: FC = () => {
+export const Quiz = () => {
    const { state, dispatch } = useQuiz();
    const { quizID } = useParams();
 
