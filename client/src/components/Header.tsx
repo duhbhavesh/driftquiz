@@ -4,12 +4,15 @@ import { useAuth } from '../context/AuthContext/AuthContext';
 import { GoGraph } from 'react-icons/go';
 import { BiNotepad } from 'react-icons/bi';
 import Logo from '../logo.svg';
+import toast from 'react-hot-toast';
 
 export const Header: FC = () => {
    const {
       authState: { firstName, token },
       handleUserSignOut,
    } = useAuth();
+
+   const notify = (message: string) => toast.success(message);
 
    return (
       <>
@@ -47,9 +50,9 @@ export const Header: FC = () => {
                <div>
                   {token ? (
                      <button
-                        onClick={handleUserSignOut}
+                        onClick={() => handleUserSignOut({ notify })}
                         className='py-2 px-4 border border-transparent text-sm font-bold rounded-md text-white bg-blue-dark hover:bg-purple-light focus:outline-none focus:ring-2 focus:ring-offset-2'>
-                        Log Out
+                        Sign out
                      </button>
                   ) : (
                      <Link to='/signin'>
