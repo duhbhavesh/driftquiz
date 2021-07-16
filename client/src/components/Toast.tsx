@@ -9,11 +9,13 @@ export const Toast = () => {
             success: {
                iconTheme: {
                   primary: '#059669',
+                  secondary: '#fff',
                },
             },
             error: {
                iconTheme: {
                   primary: '#ff4d4f',
+                  secondary: '#fff',
                },
             },
          }}

@@ -7,10 +7,8 @@ export const QuizReport = ({ quizReport }: { quizReport: QuizReportsType }) => {
    const { dispatch } = useQuiz();
 
    const handlePlayQuiz = (quizId: string) => {
-      dispatch({
-         type: 'SET_QUIZ_ID',
-         payload: quizId,
-      });
+      dispatch({ type: 'SET_QUIZ_ID', payload: quizId });
+      dispatch({ type: 'RESET_QUIZ' });
    };
 
    return (
