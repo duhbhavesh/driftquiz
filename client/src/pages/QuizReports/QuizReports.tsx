@@ -1,12 +1,24 @@
 import { FC } from 'react';
+import { useEffect } from 'react';
 import { useQuiz } from '../../context/QuizContext/QuizContext';
+import { useAuth } from '../../context/AuthContext/AuthContext';
 import { QuizReport } from '../../components/QuizReport';
 import { Link } from 'react-router-dom';
+import { handleGetQuizReports } from '../../utils/serverRequest';
 
 export const QuizReports: FC = () => {
    const {
       state: { quizReports },
+      dispatch,
    } = useQuiz();
+
+   const {
+      authState: { token },
+   } = useAuth();
+
+   useEffect(() => {
+      handleGetQuizReports(dispatch, token);
+   }, []);
 
    return (
       <>

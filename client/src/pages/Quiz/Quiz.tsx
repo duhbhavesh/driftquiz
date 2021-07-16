@@ -13,7 +13,7 @@ export const Quiz = () => {
          return quiz.id === quizId;
       });
       dispatch({ type: 'SET_CURRENT_QUIZ', payload: findCurrentQuiz });
-   }, []);
+   }, [state.quiz]);
 
    return (
       <>
