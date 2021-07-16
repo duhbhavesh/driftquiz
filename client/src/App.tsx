@@ -11,30 +11,20 @@ import { SignUp } from './pages/Auth/SignUp';
 import { QuizReport } from './pages/QuizReport/QuizReport';
 import { QuizReports } from './pages/QuizReports/QuizReports';
 import { LeaderBoard } from './pages/LeaderBoard/LeaderBoard';
-import {
-   handleGetLeaderBoard,
-   handleGetQuizReports,
-} from './utils/serverRequest';
+import { handleGetLeaderBoard } from './utils/serverRequest';
+import { Toast } from './components/Toast';
 
 export const App = () => {
-   const {
-      authState: { token },
-   } = useAuth();
    const { dispatch } = useQuiz();
 
    useEffect(() => {
       handleGetLeaderBoard(dispatch);
    }, []);
 
-   useEffect(() => {
-      if (token) {
-         handleGetQuizReports(dispatch, token);
-      }
-   }, []);
-
    return (
       <>
          <Header />
+         <Toast />
          <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />

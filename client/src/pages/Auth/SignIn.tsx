@@ -1,4 +1,5 @@
 import React, { Dispatch, useState, useEffect, SetStateAction } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext/AuthContext';
 
@@ -35,6 +36,7 @@ export const SignIn = () => {
    };
 
    const navigate = useNavigate();
+   const notify = (message: string) => toast.success(message);
 
    const SignInValidation = ({
       user,
@@ -71,6 +73,7 @@ export const SignIn = () => {
                email: user.email,
                password: user.password,
                navigateToPath: state?.from ? state?.from : '/',
+               notify,
             });
 
             if (response !== 'SUCCESS') {
@@ -87,7 +90,7 @@ export const SignIn = () => {
          <div className='flex max-w-sm mx-auto overflow-hidden bg-white rounded-xl shadow-lg mt-20'>
             <div className='w-full px-6 py-8 md:px-8 pt-10 pb-14'>
                <h2 className='text-2xl font-bold text-center text-black mb-8'>
-                  Login to DriftQuiz!
+                  Sign in to Driftquiz!
                </h2>
                <div className='mt-4'>
                   <label
@@ -131,7 +134,7 @@ export const SignIn = () => {
                   <button
                      onClick={handleFormSubmit}
                      className='w-full px-4 py-3 tracking-wide font-bold text-white transition-colors duration-200 transform bg-blue rounded-full hover:bg-blue-light focus:outline-none focus:bg-blue-dark'>
-                     Log In
+                     Sign in
                   </button>
                </div>
                <div className='p-2 mt-4 mx-auto'>

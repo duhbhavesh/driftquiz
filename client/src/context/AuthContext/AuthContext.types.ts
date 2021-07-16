@@ -14,6 +14,7 @@ export type AuthContextType = {
       email,
       password,
       navigateToPath,
+      notify,
    }: SignInUserType) => Promise<string>;
 
    handleUserSignUp: ({
@@ -21,15 +22,17 @@ export type AuthContextType = {
       password,
       firstName,
       lastName,
+      notify,
    }: SignUpUserType) => Promise<any>;
 
-   handleUserSignOut: () => void;
+   handleUserSignOut: ({ notify }: SignOutType) => void;
 };
 
 export type SignInUserType = {
    email: string;
    password: string;
    navigateToPath: string;
+   notify: Function;
 };
 
 export type SignUpUserType = {
@@ -37,4 +40,9 @@ export type SignUpUserType = {
    password: string;
    firstName: string;
    lastName: string;
+   notify: Function;
+};
+
+export type SignOutType = {
+   notify: Function;
 };

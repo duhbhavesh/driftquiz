@@ -160,7 +160,7 @@ const quizzes = [
                },
                {
                   option: 'Distorting',
-                  isRight: true,
+                  isRight: false,
                },
                {
                   option: 'None of the above',
@@ -186,7 +186,7 @@ const quizzes = [
                },
                {
                   option: 'None of the above',
-                  isRight: true,
+                  isRight: false,
                },
             ],
          },
@@ -272,7 +272,7 @@ const quizzes = [
             options: [
                {
                   option: 'Film',
-                  isRight: true,
+                  isRight: false,
                },
                {
                   option: 'Drawing skills',
@@ -306,7 +306,7 @@ const quizzes = [
                },
                {
                   option: 'File format and battery life',
-                  isRight: true,
+                  isRight: false,
                },
             ],
          },

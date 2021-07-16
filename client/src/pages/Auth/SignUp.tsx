@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { SetStateAction, Dispatch } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext/AuthContext';
 import { isValidPassword } from '../../utils/utils';
@@ -40,6 +41,8 @@ export const SignUp = () => {
       setUser({ ...user, [e.target.name]: e.target.value as string });
       return;
    };
+
+   const notify = (message: string) => toast.success(message);
 
    const SignUpValidation = ({
       user,
@@ -91,6 +94,7 @@ export const SignUp = () => {
                password: user.password,
                firstName: user.firstName,
                lastName: user.lastName,
+               notify,
             });
 
             if (response !== 'SUCCESS') {

@@ -15,8 +15,6 @@ export const Question = ({ currentQuiz }: QuizProp) => {
       authState: { token },
    } = useAuth();
    const { quizId } = useParams();
-
-   console.log('quizIddd', quizId);
    const navigate = useNavigate();
    const { state, dispatch } = useQuiz();
    const [disabledButtons, setDisabledButtons] = useState<boolean>(false);

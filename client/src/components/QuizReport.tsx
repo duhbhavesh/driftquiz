@@ -7,10 +7,8 @@ export const QuizReport = ({ quizReport }: { quizReport: QuizReportsType }) => {
    const { dispatch } = useQuiz();
 
    const handlePlayQuiz = (quizId: string) => {
-      dispatch({
-         type: 'SET_QUIZ_ID',
-         payload: quizId,
-      });
+      dispatch({ type: 'SET_QUIZ_ID', payload: quizId });
+      dispatch({ type: 'RESET_QUIZ' });
    };
 
    return (
@@ -24,20 +22,20 @@ export const QuizReport = ({ quizReport }: { quizReport: QuizReportsType }) => {
                />
 
                <div className='flex items-center px-6 py-3 bg-black-lightest'>
-                  <div className='text-lg font-semibold text-white'>
+                  <div className='text-lg font-semibold text-white mx-auto'>
                      {quizId.topic}
                   </div>
                </div>
 
                <div className='px-6 py-4'>
-                  <p className='text-small font-semibold text-white dark:text-white'>
+                  <p className='text-small font-bold bg-black-lightest p-2 rounded-md text-center text-white dark:text-white'>
                      Score - {score} / 25
                   </p>
                   <Link to={`/play/${quizReport.quizId.id}`} key={id}>
                      <button
                         id={id}
                         onClick={() => handlePlayQuiz(quizReport.quizId.id)}
-                        className='group relative flex justify-center py-2 px-4 mt-6 border border-transparent text-sm font-medium rounded-md text-white bg-blue-dark hover:bg-purple-light focus:outline-none focus:ring-2 focus:ring-offset-2'>
+                        className='group relative flex justify-center py-2 px-4 mt-6 mx-auto border border-transparent text-sm font-medium rounded-md text-white bg-blue-dark hover:bg-purple-light focus:outline-none focus:ring-2 focus:ring-offset-2'>
                         Retake Quiz
                      </button>
                   </Link>

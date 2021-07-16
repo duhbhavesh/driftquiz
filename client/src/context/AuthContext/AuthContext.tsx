@@ -3,6 +3,7 @@ import {
    AuthContextType,
    InitialAuthStateType,
    SignInUserType,
+   SignOutType,
    SignUpUserType,
 } from './AuthContext.types';
 import { AuthReducer } from '../../reducers/AuthReducer/AuthReducer';
@@ -33,6 +34,7 @@ export const AuthProvider: FC = ({ children }) => {
       email,
       password,
       navigateToPath,
+      notify,
    }: SignInUserType) => {
       try {
          const { data } = await axios({
@@ -50,6 +52,7 @@ export const AuthProvider: FC = ({ children }) => {
             payload: data,
          });
          navigate(navigateToPath, { replace: true });
+         notify('Signed in Successfully!');
 
          return 'SUCCESS';
       } catch (error) {
@@ -62,6 +65,7 @@ export const AuthProvider: FC = ({ children }) => {
       password,
       firstName,
       lastName,
+      notify,
    }: SignUpUserType) => {
       try {
          await axios({
@@ -74,6 +78,7 @@ export const AuthProvider: FC = ({ children }) => {
                lastName,
             },
          });
+         notify('Signed up Successfully!');
 
          return 'SUCCESS';
       } catch (error) {
@@ -82,7 +87,7 @@ export const AuthProvider: FC = ({ children }) => {
       }
    };
 
-   const handleUserSignOut = () => {
+   const handleUserSignOut = ({ notify }: SignOutType) => {
       setTimeout(() => {
          localStorage.removeItem('session');
          authDispatch({
@@ -90,6 +95,7 @@ export const AuthProvider: FC = ({ children }) => {
             payload: { token: '', email: '', firstName: '', userId: '' },
          });
       }, 1000);
+      notify('Signed out Successfully!');
       navigate('/home');
    };
 
