@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AnswersModal } from '../../components/AnswersModal';
 import { useQuiz } from '../../context/QuizContext/QuizContext';
 
@@ -68,6 +69,11 @@ export const QuizReport: FC = () => {
                   className='mx-auto group relative flex justify-center py-2 px-4 mt-6 border border-transparent text-sm font-medium rounded-md text-white bg-blue-dark hover:bg-purple-light focus:outline-none focus:ring-2 focus:ring-offset-2'>
                   Check Answers
                </button>
+               <Link to='/home'>
+                  <button className='mx-auto group relative flex justify-center py-2 px-4 mt-6 border border-transparent text-sm font-medium rounded-md text-black-dark bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2'>
+                     Go to Home
+                  </button>
+               </Link>
             </div>
          </div>
 

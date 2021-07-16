@@ -6,6 +6,7 @@ export const Home = () => {
 
    const handlePlayQuiz = (quizId: string) => {
       dispatch({ type: 'SET_QUIZ_ID', payload: quizId });
+      dispatch({ type: 'RESET_QUIZ' });
    };
 
    return (

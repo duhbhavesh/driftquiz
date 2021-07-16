@@ -32,15 +32,15 @@ export const LeaderBoard: FC = () => {
                                  <circle cx='12' cy='7' r='4'></circle>
                               </svg>
                            </div>
+                           <p className='leading-relaxed text-white font-medium text-lg mb-2'>
+                              Topic : {user.quizId?.topic}
+                           </p>
                            <h2 className='text-lg text-white font-medium title-font mb-2'>
-                              Name : {user.userId.firstName}
+                              Name : {user.userId?.firstName}
                            </h2>
 
-                           <p className='leading-relaxed text-white font-extrabold text-lg'>
-                              Score: {user.score} / 25
-                           </p>
-                           <p className='leading-relaxed text-white font-medium text-base'>
-                              Topic: {user.quizId.topic}
+                           <p className='leading-relaxed text-white font-extrabold text-lg bg-black-lightest p-2 mt-4 mb-4 rounded-md'>
+                              Score : {user?.score} / 25
                            </p>
                         </div>
                      </div>

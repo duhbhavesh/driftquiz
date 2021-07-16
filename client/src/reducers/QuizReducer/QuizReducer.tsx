@@ -18,6 +18,13 @@ export const QuizReducer = (
             currentQuiz: action.payload,
          };
 
+      case 'RESET_QUIZ':
+         return {
+            ...state,
+            currentQuestionNumber: 0,
+            score: 0,
+         };
+
       case 'SET_QUIZ_ID':
          return {
             ...state,
