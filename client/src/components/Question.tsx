@@ -37,18 +37,6 @@ export const Question = ({ currentQuiz }: QuizProp) => {
                ].options.find((option) => option.isRight)?.id,
             },
          });
-         console.log(
-            'quiz option id',
-            currentQuiz.questions[state.currentQuestionNumber].id,
-         );
-         console.log(
-            'selected option id',
-            currentQuiz.questions[state.currentQuestionNumber].options.find(
-               (option) => option.isRight,
-            )?.id,
-         );
-         console.log('next question', optionID);
-         console.log('next question -------------------------------------');
       }
       setOptionID('');
    };
@@ -73,17 +61,6 @@ export const Question = ({ currentQuiz }: QuizProp) => {
             ].options.find((option) => option.isRight)?.id,
          },
       });
-      console.log(
-         'quiz option id',
-         currentQuiz.questions[state.currentQuestionNumber].id,
-      );
-      console.log(
-         'selected option id',
-         currentQuiz.questions[state.currentQuestionNumber].options.find(
-            (option) => option.isRight,
-         )?.id,
-      );
-      console.log('right answer-------------------------------------');
    };
 
    const handleGetQuizReport = () => {
@@ -101,17 +78,6 @@ export const Question = ({ currentQuiz }: QuizProp) => {
             },
          });
       }
-      console.log(
-         'quiz option id',
-         currentQuiz.questions[state.currentQuestionNumber].id,
-      );
-      console.log(
-         'selected option',
-         currentQuiz.questions[state.currentQuestionNumber].options.find(
-            (option) => option.isRight,
-         )?.id,
-      );
-      console.log('quiz submit-------------------------------------');
 
       if (token) {
          handlePostScore(dispatch, token, state, quizId);
