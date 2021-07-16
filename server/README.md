@@ -1,4 +1,4 @@
-# Driftquiz - Server [![Netlify Status](https://api.netlify.com/api/v1/badges/17a9d3b0-3183-4f78-95bb-85b4dc793d00/deploy-status)](https://app.netlify.com/sites/driftquiz/deploys)
+# Driftquiz - Server
 
 Live Demo - [Driftquiz API](https://driftquiz-server.herokuapp.com/)
 
