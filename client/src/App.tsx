@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { PrivateRoute } from './pages/Auth/PrivateRoute';
-import { useAuth } from './context/AuthContext/AuthContext';
 import { useQuiz } from './context/QuizContext/QuizContext';
 import { Header } from './components/Header';
 import { Home } from './pages/Home/Home';

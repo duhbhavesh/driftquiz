@@ -15,8 +15,8 @@ type SignInFormErrorType = {
 
 export const SignIn = () => {
    const [user, setUser] = useState({
-      email: '',
-      password: '',
+      email: 'test@gmail.com',
+      password: 'Test123',
    });
    const [error, setError] = useState({
       email: '',
