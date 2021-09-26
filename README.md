@@ -38,6 +38,11 @@ Below are few project screens to get a glimpse of Driftquiz, feel free to check 
 -  bcrypt
 -  jwt
 
+## Installation
+
+- [Frontend Installation](https://github.com/duhbhavesh/driftquiz/tree/main/client#installation)
+- [Backend Installation](https://github.com/duhbhavesh/driftquiz/tree/main/server#installation)
+
 ## License
 
 -  [MIT](https://github.com/duhbhavesh/driftquiz/blob/development-client/client/LICENSE)
